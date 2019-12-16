@@ -1,8 +1,29 @@
                    Prefix Verb   URI Pattern                                                                              Controller#Action
-              rails_admin        /admin                                                                                   RailsAdmin::Engine
-        new_admin_session GET    /admin/admins/sign_in(.:format)                                                          devise/sessions#new
-            admin_session POST   /admin/admins/sign_in(.:format)                                                          devise/sessions#create
-    destroy_admin_session DELETE /admin/admins/sign_out(.:format)                                                         devise/sessions#destroy
+              rails_admin        /admin/admins                                                                            RailsAdmin::Engine
+         new_user_session GET    /users/login(.:format)                                                                   devise/sessions#new
+             user_session POST   /users/login(.:format)                                                                   devise/sessions#create
+     destroy_user_session DELETE /users/logout(.:format)                                                                  devise/sessions#destroy
+        new_user_password GET    /users/secret/new(.:format)                                                              devise/passwords#new
+       edit_user_password GET    /users/secret/edit(.:format)                                                             devise/passwords#edit
+            user_password PATCH  /users/secret(.:format)                                                                  devise/passwords#update
+                          PUT    /users/secret(.:format)                                                                  devise/passwords#update
+                          POST   /users/secret(.:format)                                                                  devise/passwords#create
+ cancel_user_registration GET    /users/cancel(.:format)                                                                  users/registrations#cancel
+    new_user_registration GET    /users/registration(.:format)                                                            users/registrations#new
+   edit_user_registration GET    /users/edit(.:format)                                                                    users/registrations#edit
+        user_registration PATCH  /users(.:format)                                                                         users/registrations#update
+                          PUT    /users(.:format)                                                                         users/registrations#update
+                          DELETE /users(.:format)                                                                         users/registrations#destroy
+                          POST   /users(.:format)                                                                         users/registrations#create
+    new_user_confirmation GET    /users/confirmation/new(.:format)                                                        devise/confirmations#new
+        user_confirmation GET    /users/confirmation(.:format)                                                            devise/confirmations#show
+                          POST   /users/confirmation(.:format)                                                            devise/confirmations#create
+          new_user_unlock GET    /users/unlock/new(.:format)                                                              devise/unlocks#new
+              user_unlock GET    /users/unlock(.:format)                                                                  devise/unlocks#show
+                          POST   /users/unlock(.:format)                                                                  devise/unlocks#create
+        new_admin_session GET    /admins/login(.:format)                                                                  admins/sessions#new
+            admin_session POST   /admins/login(.:format)                                                                  admins/sessions#create
+    destroy_admin_session DELETE /admins/logout(.:format)                                                                 admins/sessions#destroy
                      root GET    /                                                                                        pages#home
        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show

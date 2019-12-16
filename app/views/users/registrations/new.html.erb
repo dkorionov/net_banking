@@ -1,0 +1,51 @@
+<div class="row-md-12 session_form">
+  <div class="offset-3 col-md-6">
+    <%= render "users/shared/error_messages", resource: resource %>
+    <h2 class="text-center">Sign up</h2>
+   <%= form_for(resource, as: resource_name, url: user_registration_path(resource)) do |f| %>
+      <div class="field form-group">
+        <%= f.label :full_name %><br/>
+        <%= f.text_field :full_name, autofocus: true, autocomplete: "full-name", class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br/>
+        <%= f.password_field :password, autocomplete: "new-password ", class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :password_confirmation %><br/>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :phone %><br/>
+        <%= f.text_field :phone, autofocus: true, autocomplete: "phone", class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :birthday %><br/>
+        <%= f.date_select :birthday, autofocus: true, autocomplete: "birthday", class: 'form-control' %>
+      </div>
+
+      <div class="field form-group">
+        <%= f.label :male %>
+        <%= f.radio_button :gender, 'm', label: "male", checked: true %>
+        <%= f.label :female %>
+        <%= f.radio_button :gender, 'w', label: "female" %>
+      </div>
+      <div class="actions ">
+        <%= f.submit "Sign up", class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+    <%= render "users/shared/links" %>
+  </div>
+</div>
