@@ -2,6 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="392ab61f-0dff-493f-8ae2-f4b41b0866a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/models/bill.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/bill_request.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/city.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/country.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/manager.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/manager_notification.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/transaction.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/managers/mailer/email_changed.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/managers/mailer/password_change.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/managers/mailer/reset_password_instructions.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/managers/passwords/edit.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/managers/passwords/new.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/managers/sessions/new.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/managers/shared/_links.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/shared/_errors.html.erb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20191217001113_devise_create_managers.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20191217012011_create_countries.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20191217012545_create_cities.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20191217014529_create_bills.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20191217143604_create_transactions.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20191217152425_create_bill_requests.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/migrate/20191217153959_create_manager_notifications.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/models/bill_request_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/models/bill_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/models/city_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/models/country_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/models/manager_notification_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/models/manager_spec.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/models/transaction_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/railways.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/railways.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/users/confirmations_controller.rb" beforeDir="false" />
@@ -236,7 +265,7 @@
       <workItem from="1576523310632" duration="1239000" />
       <workItem from="1576524926123" duration="1024000" />
       <workItem from="1576526073286" duration="7089000" />
-      <workItem from="1576589460239" duration="7219000" />
+      <workItem from="1576589460239" duration="7522000" />
     </task>
     <servers />
   </component>
