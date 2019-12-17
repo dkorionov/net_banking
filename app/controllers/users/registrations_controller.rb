@@ -40,25 +40,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  @user_attributes = %i[full_name gender phone birthday]
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: @user_attributes)
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[full_name birthday gender phone])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_user_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: @user_attributes)
+    devise_parameter_sanitizer.permit(:account_update, keys: %i[full_name birthday gender phone])
   end
 
-  # The path used after sign up.
-  def after_sign_up_path_for(resource)
-    super(resource)
-  end
-
-  # The path used after sign up for inactive accounts.
-  def after_inactive_sign_up_path_for(resource)
-    super(resource)
-  end
+    # # The path used after sign up.
+    # def after_sign_up_path_for(resource)
+    #   super(resource)
+    # end
+    #
+    # # The path used after sign up for inactive accounts.
+    # def after_inactive_sign_up_path_for(resource)
+    #   super(resource)
+    # end
 end

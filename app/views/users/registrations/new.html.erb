@@ -2,7 +2,7 @@
   <div class="offset-3 col-md-6">
     <%= render "users/shared/error_messages", resource: resource %>
     <h2 class="text-center">Sign up</h2>
-   <%= form_for(resource, as: resource_name, url: user_registration_path(resource)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: user_registration_path(resource)) do |f| %>
       <div class="field form-group">
         <%= f.label :full_name %><br/>
         <%= f.text_field :full_name, autofocus: true, autocomplete: "full-name", class: 'form-control' %>
@@ -33,7 +33,7 @@
 
       <div class="field form-group">
         <%= f.label :birthday %><br/>
-        <%= f.date_select :birthday, autofocus: true, autocomplete: "birthday", class: 'form-control' %>
+        <%= f.date_select :birthday, {:start_year => Time.now.year, :end_year => Time.now.year - 95}, autofocus: true, autocomplete: "birthday" %>
       </div>
 
       <div class="field form-group">
