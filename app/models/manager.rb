@@ -8,5 +8,6 @@ class Manager < ApplicationRecord
   validates :encrypted_password, length: {minimum: 6}
   has_many :bill_requests, dependent: :delete_all
   has_many :manager_notifications
-  validates_associated :bill_requests
+  validates :encrypted_password, confirmation: true, on: :update
+  validates_associated :bill_requests, :manager_notifications
 end
