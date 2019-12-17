@@ -3,16 +3,21 @@ Rails.application.routes.draw do
 
   devise_for :users,
              path_names:
-                 {sign_in: 'login', sign_out: 'logout',
-                  password: 'secret', sign_up: 'registration'},
+                 { sign_in: 'login', sign_out: 'logout',
+                  password: 'secret', sign_up: 'registration' },
              controllers: {
                  registrations: 'users/registrations'
              }
 
   devise_for :admins, skip: :registration,
-             path_names: {sign_in: 'login', sign_out: 'logout'},
-             controllers: {sessions: 'admins/sessions'}
+             path_names: { sign_in: 'login', sign_out: 'logout' },
+             controllers: { sessions: 'admins/sessions' }
 
-  root to: redirect("/users/login")
+  devise_for :managers, skip: :registration,
+             path_names:
+                 { sign_in: 'login', sign_out: 'logout',
+                  password: 'secret' }
+
+  root to: 'pages#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

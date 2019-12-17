@@ -24,7 +24,15 @@
         new_admin_session GET    /admins/login(.:format)                                                                  admins/sessions#new
             admin_session POST   /admins/login(.:format)                                                                  admins/sessions#create
     destroy_admin_session DELETE /admins/logout(.:format)                                                                 admins/sessions#destroy
-                     root GET    /                                                                                        pages#home
+      new_manager_session GET    /managers/login(.:format)                                                                devise/sessions#new
+          manager_session POST   /managers/login(.:format)                                                                devise/sessions#create
+  destroy_manager_session DELETE /managers/logout(.:format)                                                               devise/sessions#destroy
+     new_manager_password GET    /managers/secret/new(.:format)                                                           devise/passwords#new
+    edit_manager_password GET    /managers/secret/edit(.:format)                                                          devise/passwords#edit
+         manager_password PATCH  /managers/secret(.:format)                                                               devise/passwords#update
+                          PUT    /managers/secret(.:format)                                                               devise/passwords#update
+                          POST   /managers/secret(.:format)                                                               devise/passwords#create
+                     root GET    /                                                                                        pages#index
        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show

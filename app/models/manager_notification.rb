@@ -1,0 +1,2 @@
+class ManagerNotification < ApplicationRecord
+end

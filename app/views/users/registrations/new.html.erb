@@ -1,7 +1,12 @@
 <div class="row-md-12 session_form">
   <div class="offset-3 col-md-6">
+<<<<<<< HEAD
     <%= render "users/shared/error_messages", resource: resource %>
     <h2 class="text-center">Sign up</h2>
+=======
+    <%= render "shared/errors", resource: resource %>
+    <h2 class="text-center">User registration</h2>
+>>>>>>> dev_models
     <%= form_for(resource, as: resource_name, url: user_registration_path(resource)) do |f| %>
       <div class="field form-group">
         <%= f.label :full_name %><br/>
