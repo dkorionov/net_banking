@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable,
          :timeoutable, :lockable, :confirmable
 
+  extend FriendlyId
+  friendly_id :full_name, use: :slugged
+
   validates :email, :full_name, :birthday, :gender, :phone, presence: true
   validates :email, uniqueness: true
   validates :encrypted_password, length: {minimum: 6}, presence: true

@@ -1,12 +1,8 @@
 <div class="row-md-12 session_form">
   <div class="offset-3 col-md-6">
-<<<<<<< HEAD
-    <%= render "users/shared/error_messages", resource: resource %>
-    <h2 class="text-center">Sign up</h2>
-=======
     <%= render "shared/errors", resource: resource %>
     <h2 class="text-center">User registration</h2>
->>>>>>> dev_models
+
     <%= form_for(resource, as: resource_name, url: user_registration_path(resource)) do |f| %>
       <div class="field form-group">
         <%= f.label :full_name %><br/>
@@ -42,10 +38,10 @@
       </div>
 
       <div class="field form-group">
-        <%= f.label :male %>
-        <%= f.radio_button :gender, 'm', label: "male", checked: true %>
-        <%= f.label :female %>
-        <%= f.radio_button :gender, 'w', label: "female" %>
+        <%= f.label :gender, 'male'  %>
+        <%= f.radio_button :gender, 'male' %>
+        <%= f.label :gender, 'female'%>
+        <%= f.radio_button :gender, 'female' %>
       </div>
       <div class="actions ">
         <%= f.submit "Sign up", class: 'btn btn-primary' %>

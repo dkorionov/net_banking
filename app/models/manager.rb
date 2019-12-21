@@ -3,6 +3,8 @@ class Manager < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable, :timeoutable, :trackable
+  extend FriendlyId
+  friendly_id :full_name, use: :slugged
   validates :login, :email, presence: true, uniqueness: true
   validates :full_name, presence: true
   validates :encrypted_password, length: {minimum: 6}
