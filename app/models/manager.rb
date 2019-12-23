@@ -2,7 +2,7 @@ class Manager < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable,
-         :recoverable, :rememberable, :validatable, :timeoutable, :trackable
+         :recoverable, :rememberable, :validatable, :timeoutable, :trackable, :authentication_keys => [:login]
   extend FriendlyId
   friendly_id :full_name, use: :slugged
   validates :login, :email, presence: true, uniqueness: true

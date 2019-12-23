@@ -16,4 +16,5 @@ class User < ApplicationRecord
   validates :gender, inclusion: {in: %w(male female)}
   has_many :bills, dependent: :destroy
   validates_associated :bills
+
 end

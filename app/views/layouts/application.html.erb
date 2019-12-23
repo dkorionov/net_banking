@@ -17,19 +17,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav ">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary' %>
-          </li>
-        <% else %>
-          <li class="nav-item active">
-            <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-primary' %>
-            <%= link_to 'Registration', new_user_registration_path, class: 'btn btn-outline-primary' %>
-          </li>
-          </ul>
-        <% end %>
-        </div>
+      <%= render 'shared/login_panel' %>
+    </div>
   </nav>
 </header>
 <%= render 'layouts/messages' %>

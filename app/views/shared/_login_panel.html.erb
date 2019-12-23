@@ -1,0 +1,15 @@
+<ul class="navbar-nav ">
+  <% if user_signed_in? %>
+    <li class="nav-item active">
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-primary' %>
+    </li>
+  <% elsif manager_signed_in? %>
+    <%= link_to 'Logout', destroy_manager_session_path, method: :delete, class: 'btn btn-outline-primary' %>
+
+  <% else %>
+    <li class="nav-item active">
+      <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-primary' %>
+      <%= link_to 'Registration', new_user_registration_path, class: 'btn btn-outline-primary' %>
+    </li>
+    </ul>
+  <% end %>

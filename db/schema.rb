@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_001232) do
     t.index ["sender_id"], name: "index_transactions_on_sender_id"
   end
 
-  create_table "main", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "full_name", null: false
     t.string "email", null: false
     t.string "encrypted_password", null: false

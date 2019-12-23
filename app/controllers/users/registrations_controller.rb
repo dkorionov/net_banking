@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
-  before_action :configure_user_update_params, only: [:update]
-
+  before_action :configure_sign_up_params, only: :create
+  before_action :configure_user_update_params, only: :update
+  after_action :set_default_bill, only: :create
   # GET /resource/sign_up
   def new
     super
@@ -40,6 +40,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
+  def set_default_bill
+    bill_builder = BillService::BillBuilder.new
+    resource.bill.create(bill_builder.bill_type = 'deposit')
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
@@ -51,13 +55,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:account_update, keys: %i[full_name birthday gender phone])
   end
 
-    # # The path used after sign up.
-    # def after_sign_up_path_for(resource)
-    #   super(resource)
-    # end
-    #
-    # # The path used after sign up for inactive accounts.
-    # def after_inactive_sign_up_path_for(resource)
-    #   super(resource)
-    # end
+  # # The path used after sign up.
+  # def after_sign_up_path_for(resource)
+  #   super(resource)
+  # end
+  #
+  # # The path used after sign up for inactive accounts.
+  # def after_inactive_sign_up_path_for(resource)
+  #   super(resource)
+  # end
 end
