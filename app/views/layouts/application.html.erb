@@ -13,9 +13,9 @@
 <header>
   <nav class="navbar navbar-expand navbar-dark bg-dark ">
     <a href="<%= root_path %>"><%= image_tag('nav.svg', size: '45x45') %></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <% if current_user %>
+      <%= render 'users/main/menu' %>
+    <% end %>
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <%= render 'shared/login_panel' %>
     </div>

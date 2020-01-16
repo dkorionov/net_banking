@@ -1,0 +1,14 @@
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Bills
+      </a>
+      <%=render 'users/main/drop_menu' %>
+    </li>
+
+    <li class="nav-item">
+      <%= link_to 'Settings', edit_user_registration_path(current_user), class: 'nav-link' %>
+    </li>
+  </ul>
+</div>

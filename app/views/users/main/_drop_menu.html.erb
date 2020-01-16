@@ -1,0 +1,6 @@
+<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+  <%= link_to 'Deposits', users_bills_url(params: {type: 'deposit'}), class: 'dropdown-item' %>
+  <%= link_to 'Credits', users_bills_url(params: {type: 'deposit'}), class: 'dropdown-item' %>
+  <%= link_to 'New Deposit', new_users_bill_url(params: {type: 'deposit'}), class: 'dropdown-item' %>
+  <%= link_to 'New Credit', new_users_bill_url(params: {type: 'deposit'}), class: 'dropdown-item' %>
+</div>

@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_12_20_001232) do
     t.boolean "close_status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "amount_limit", null: false
     t.index ["user_id"], name: "index_bills_on_user_id"
   end
 

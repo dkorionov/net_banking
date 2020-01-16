@@ -5,23 +5,26 @@ Rails.application.routes.draw do
              controllers: {
                  registrations: 'users/registrations'
              }
-  devise_for :admins, path_names: {sign_in: 'login', sign_out: 'logout'},
-             controllers: {sessions: 'admins/sessions'}
+  devise_for :admins, path_names: {sign_in: 'login'}, controllers: {sessions: 'admins/sessions'}
 
   devise_for :managers, path_names: {sign_in: 'login', sign_out: 'logout', password: 'secret'},
              controllers: {sessions: 'managers/sessions'}
 
 
-  namespace 'users' do
-    get '/:id', to: 'main#dashboard', as: 'user_profile'
-    resources :bills do
-      resources :transactions
+  resource :users, only: [] do
+    resources :bills, params: :type, shallow: true do
+      resources :transactions, only: %i[show,create]
     end
+    get '/:id', to: 'users/main#dashboard', as: 'profile'
   end
-  namespace 'managers' do
-    get '/:id', to: 'main#dashboard', as: 'manager_profile'
 
+  resource :managers, only: [] do
+    resources :manager_notifications, :bill_requests, except: %i[create update]
+    resource :bills, params: :type
+    resources :transactins, only: :show
+    get '/:id', to: 'managers/main#dashboard', as: 'profile'
   end
+
   root to: 'pages#index'
 
 

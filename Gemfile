@@ -25,6 +25,7 @@ gem 'oj'
 gem 'oj_mimic_json'
 gem 'rails_admin'
 gem 'sassc-rails'
+gem 'simple-navigation'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

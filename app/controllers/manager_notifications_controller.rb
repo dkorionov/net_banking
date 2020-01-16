@@ -1,0 +1,2 @@
+class ManagerNotificationsController < ApplicationController
+end

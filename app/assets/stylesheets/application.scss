@@ -16,7 +16,7 @@
 @import "bootstrap";
 
 
-.session_form {
+.session_form, .credits, .deposits {
   margin-top: 2em;
 }
 
@@ -25,7 +25,4 @@
   margin-bottom: 1em;
 }
 
-.bg_image {
-  background: url('bg_image.svg') right no-repeat;
-  background-size: auto 100vh;
-}
+

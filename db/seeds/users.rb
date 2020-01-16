@@ -3,10 +3,7 @@ if User.count.zero?
   user1 = User.new(full_name: 'John Johnson', email: 'john@mail.com',
                    birthday: '1997-10-17', gender: 'male', phone: '123456789',
                    password: '123456', password_confirmation: '123456')
-  bill = BillService::BillBuilder.new.bill_type = 'deposit'
   user1.skip_confirmation!
-  user1.save!
-  user1.bills
   user1.save!
 
   user2 = User.new(full_name: 'Mary Smith', email: 'smith@mail.com',

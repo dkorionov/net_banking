@@ -17,4 +17,9 @@ class User < ApplicationRecord
   has_many :bills, dependent: :destroy
   validates_associated :bills
 
+  def execute_command(command)
+    command.execute
+  end
+
+
 end
